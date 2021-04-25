@@ -11,8 +11,8 @@ class Site(object):
         directory = self.dest / path.relative_to(self.source)
         directory.mkdir(parents = True, exist_ok = True)
 
-    def build():
+    def build(self):
         self.dest.mkdir(parents = True, exist_ok = True)
-        for path in self.source.glob("*"):
+        for path in self.source.rglob("*"):
             if path.is_dir():
-                path.create_dir()
+                self.create_dir(path)
