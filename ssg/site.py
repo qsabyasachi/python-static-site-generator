@@ -20,7 +20,7 @@ class Site:
                 self.run_parser(path)
     def load_parser(self,extension):
         for parser in self.parsers:
-            if valid_extension(extension):
+            if parser.valid_extension(extension):
                 return parser
     def run_parser(self,path):
         parser = self.load_parser(path.suffix)

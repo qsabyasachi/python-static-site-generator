@@ -11,7 +11,7 @@ class Parser:
         raise NotImplementedError
     def read(self,path):
         with open(path,'r') as file:
-            return file.read
+            return file.read()
     def write(self,path,dest,content,ext = ".html"):
         full_path = dest / path.with_suffix(ext).name
         with open(full_path,"w") as file:
